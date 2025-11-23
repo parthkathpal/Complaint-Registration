@@ -68,6 +68,3 @@ Add a license (e.g., MIT, Apache-2.0). If you don't have a preferred license, co
 Maintainer: parthkathpal
 Link: https://github.com/parthkathpal
 
----
-Notes:
-- This README is a template. I kept instructions generic to match the repository until the actual stack and endpoints are confirmed. Update the Installation, Running, and API sections with concrete commands and examples found in the codebase.
