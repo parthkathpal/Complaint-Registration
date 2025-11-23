@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="d-flex justify-content-between align-items-center mb-3">
+  <h2>All Complaints</h2>
+  <a class="btn btn-success" href="{{ url_for('create_complaint') }}">+ New Complaint</a>
+</div>
+
+{% if complaints %}
+  <div class="list-group">
+    {% for c in complaints %}
+      <a href="{{ url_for('view_complaint', cid=c.id) }}" class="list-group-item list-group-item-action">
+        <div class="d-flex w-100 justify-content-between">
+          <h5 class="mb-1">{{ c.title }}</h5>
+          <small class="text-muted">{{ c.created_at.strftime('%Y-%m-%d %H:%M') }}</small>
+        </div>
+        <p class="mb-1 text-truncate">{{ c.description }}</p>
+        <small>By {{ c.student_name }} — <span class="badge bg-secondary">{{ c.status }}</span></small>
+      </a>
+    {% endfor %}
+  </div>
+{% else %}
+  <div class="alert alert-info">No complaints yet. Be the first to register one.</div>
+{% endif %}
+{% endblock %}
